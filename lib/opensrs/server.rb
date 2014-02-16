@@ -25,6 +25,7 @@ module OpenSRS
         :protocol => "XCP"
       }
 
+      byebug
       xml = xml_processor.build(attributes.merge!(options))
       log(xml, "Request XML for #{options[:object]} #{options[:action]}")
 
