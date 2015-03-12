@@ -1,9 +1,9 @@
-source "http://rubygems.org"
+source "https://rubygems.org"
 
 gem "nokogiri", "~> 1.6.1"
 
 group :development do
-  gem "libxml-ruby", "~> 2.6.0"
+  gem "libxml-ruby", "~> 2.7.0"
   gem "jeweler"
   gem "git"
   gem "rake"
