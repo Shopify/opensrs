@@ -11,6 +11,11 @@ module OpenSRS
   class TimeoutError < ConnectionError; end
 
   class Server
+    class << self
+      attr_accessor :ciphers
+    end
+    self.ciphers = 'TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256'
+
     attr_accessor :server,
                   :username,
                   :password,
@@ -90,7 +95,9 @@ module OpenSRS
         Net::HTTP.new(server.host, server.port)
       end
       http.use_ssl = (server.scheme == "https")
-      http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+      if self.class.ciphers
+        http.ciphers = self.class.ciphers
+      end
       http.read_timeout = http.open_timeout = @timeout if @timeout
       http.open_timeout = @open_timeout                if @open_timeout
       http
