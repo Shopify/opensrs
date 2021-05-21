@@ -27,11 +27,12 @@ GEM
     mime-types (3.2.2)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2018.0812)
-    mini_portile2 (2.3.0)
+    mini_portile2 (2.5.1)
     minitest (5.11.3)
     netrc (0.11.0)
-    nokogiri (1.8.2)
-      mini_portile2 (~> 2.3.0)
+    nokogiri (1.11.5)
+      mini_portile2 (~> 2.5.0)
+      racc (~> 1.4)
     package_cloud (0.3.05)
       highline (= 1.6.20)
       json_pure (= 1.8.1)
@@ -42,6 +43,7 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    racc (1.5.2)
     rainbow (2.2.2)
       rake
     rake (10.4.2)
@@ -84,7 +86,7 @@ DEPENDENCIES
   activesupport (~> 4.2.2)
   bundler
   libxml-ruby (~> 2)
-  nokogiri (~> 1.8.1)
+  nokogiri (~> 1.11.5)
   package_cloud
   pry
   rake
